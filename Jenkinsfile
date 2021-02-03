@@ -8,7 +8,7 @@ pipeline {
 	stages {
         stage('Echo Environment Variables') {
             steps {
-			sh echo "Hello"
+			sh 'echo "Hello"'
 			
 			  }
     }
