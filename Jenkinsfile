@@ -13,7 +13,7 @@ pipeline {
 			  }
     }
 	
-stage('Curl job') {
+stage( 'JOB') {
 	when {
                        expression { type == 'job'}
                } 
@@ -23,7 +23,7 @@ stage('Curl job') {
       }
     }
 		
-stage('Curl view') {
+stage('View') {
 	when {
                        expression { type == 'view'}
                } 
@@ -31,7 +31,15 @@ stage('Curl view') {
 	      sh 'curl -g -u prasanna:Cts++2014 "http://172.31.43.33:9999/view/trips/api/json?tree=jobs[name,url,builds[number,result,timestamp,duration]{0,1}]"'
 
       }
-    }		
+    }	
+		stage('Pipeline') {
+	when {
+                       expression { type == 'Pipeline'}
+               } 
+      steps {
+	      sh 'curl -g -u prasanna:Cts++2014 "http://172.31.43.33:9999/job/Demo2/13/wfapi/"
+      }
+    }
 		
   }
 }
