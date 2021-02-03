@@ -19,4 +19,3 @@ stage('Curl stage') {
       }
     }
   }
-}
