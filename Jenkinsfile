@@ -1,8 +1,9 @@
 pipeline {
-   agent any
-
-  
+  agent {
+    node {
+      label 'linux'
     }
+  }
 	
 	stages {
         stage('Echo Environment Variables') {
@@ -19,3 +20,4 @@ stage('Curl stage') {
       }
     }
   }
+}
