@@ -28,7 +28,7 @@ stage('Curl view') {
                        expression { type == 'view'}
                } 
       steps {
-	      sh 'curl -g -u prasanna:Cts++2014 "http://172.31.43.33:9999/view/trips/api/json?tree=jobs[name,url,builds[number,result,timestamp,duration]{0,4}]"'
+	      sh 'curl -g -u prasanna:Cts++2014 "http://172.31.43.33:9999/view/trips/api/json?tree=jobs[name,url,builds[number,result,timestamp,duration]{0,1}]"'
 
       }
     }		
