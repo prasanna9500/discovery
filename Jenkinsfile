@@ -37,7 +37,7 @@ stage('View') {
                        expression { type == 'Pipeline'}
                } 
       steps {
-	      sh 'curl -g -u prasanna:Cts++2014 "http://172.31.43.33:9999/job/Demo2/13/wfapi/"
+	      sh 'curl -g -u prasanna:Cts++2014 "http://172.31.43.33:9999/job/Demo2/13/wfapi/"'
       }
     }
 		
