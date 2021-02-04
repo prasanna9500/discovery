@@ -8,7 +8,7 @@ pipeline {
 	stages {
         stage('Echo Environment Variables') {
             steps {
-			sh 'echo "Hello"'
+			sh 'python cons1.py'
 			
 			  }
     }
@@ -28,8 +28,8 @@ stage('View') {
                        expression { type == 'view'}
                } 
       steps {
-	      //sh 'curl -g -u prasanna:Cts++2014 "http://172.31.43.33:9999/view/trips/api/json?tree=jobs[name,url,builds[number,result,timestamp,duration]{0,1}]"'
-	      sh 'python cons1.py'
+	      sh 'curl -g -u prasanna:Cts++2014 "http://172.31.43.33:9999/view/trips/api/json?tree=jobs[name,url,builds[number,result,timestamp,duration]{0,1}]"'
+	      
 
       }
     }	
