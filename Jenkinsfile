@@ -8,7 +8,7 @@ pipeline {
 	stages {
         stage('Echo Environment Variables') {
             steps {
-			sh 'python cons1.py'
+			sh 'echo "Hello"'
 			
 			  }
     }
