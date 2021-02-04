@@ -8,8 +8,8 @@ username = "prasanna"
 password = "Cts++2014"
 jenkins_url = "http://172.31.43.33:9999"
 
-type = os.getenv("type")
-if type == "job":
+type = os.getenv("Type")
+if Type == "Job":
 
     jenkins_url = jenkins_url
     job_name = os.getenv("Jobname")
@@ -23,7 +23,7 @@ if type == "job":
     response = requests.get(request_url, auth=(username, password)).json()
     print(response)
 
-elif type == "view":
+elif Type == "View":
     jenkins_url = jenkins_url
     view_name = os.getenv("Jobname")
     Limit= os.getenv("Limit")
@@ -36,7 +36,7 @@ elif type == "view":
     print(response)
 
 
-elif type == "pipeline":
+elif Type == "Pipeline":
         job_name = os.getenv("Jobname")
         build_number= os.getenv("Buildnumber")
         url=jenkins_url + "/job/" + job_name +"/" + build_number + "/wfapi/"
