@@ -8,7 +8,7 @@ username = "prasanna"
 password = "Cts++2014"
 jenkins_url = "http://172.31.43.33:9999"
 
-type = os.getenv("Type")
+Type = os.getenv("Type")
 if Type == "Job":
 
     jenkins_url = jenkins_url
