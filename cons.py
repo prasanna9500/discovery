@@ -27,7 +27,7 @@ elif type == "view":
     jenkins_url = jenkins_url
     view_name = os.getenv("Jobname")
     Limit= os.getenv("Limit")
-    request_url = "{0:s}/job/{1:s}/api/json{2:s}".format(
+    request_url = "{0:s}/view/{1:s}/api/json{2:s}".format(
     jenkins_url,
     view_name,
     "?tree=builds[fullDisplayName,id,number,timestamp]{0," + Limit + "}"
