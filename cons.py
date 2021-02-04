@@ -9,17 +9,11 @@ password = "Cts++2014"
 jenkins_url = "http://172.31.43.33:9999"
 
 type = os.getenv("type")
-#("Enter the Type (job/view/pipeline): ")
 if type == "job":
 
     jenkins_url = jenkins_url
-   # username = "prasanna"
-   # password = "Cts++2014"
     job_name = os.getenv("Jobname")
     Limit= os.getenv("Limit")
-    #stop_date = datetime.strptime("01.02.2021 0:30", "%d.%m.%Y %H:%M")
-    #start_date = datetime.strptime("01.12.2020 17:30", "%d.%m.%Y %H:%M")
-
     request_url = "{0:s}/job/{1:s}/api/json{2:s}".format(
     jenkins_url,
     job_name,
@@ -27,26 +21,19 @@ if type == "job":
     )
 
     response = requests.get(request_url, auth=(username, password)).json()
-   # builds = []
-
-    #for build in response["builds"]:
-    # Convert build timestamp to datetime
- #  build_date = datetime.utcfromtimestamp(build["timestamp"]/1000)
-    # Compare build datetime with provided dates range
-       # if build_date > start_date and build_date < stop_date:
-        # Do stuff with builds which fits dates range
-         #builds.append(build)
-
     print(response)
 
 elif type == "view":
-        view_name = raw_input("Enter the View name: ")
-        request_url = jenkins_url + "/view/" + view_name + "/api/json?tree=jobs[name]"
-
-        response = requests.get(request_url, auth=(username, password))
-        data = response.json()
-        #jobs = server.get_jobs(view_name=view_name)
-        print ((data['jobs']))
+    jenkins_url = jenkins_url
+    view_name = os.getenv("Jobname")
+    Limit= os.getenv("Limit")
+    request_url = "{0:s}/job/{1:s}/api/json{2:s}".format(
+    jenkins_url,
+    view_name,
+    "?tree=builds[fullDisplayName,id,number,timestamp]{0," + Limit + "}"
+    )
+    response = requests.get(request_url, auth=(username, password)).json()
+    print(response)
 
 
 elif type == "pipeline":
