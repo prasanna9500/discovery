@@ -30,7 +30,7 @@ elif type == "view":
     request_url = "{0:s}/view/{1:s}/api/json{2:s}".format(
     jenkins_url,
     view_name,
-    "?tree=jobs[name,url,builds[number,result,timestamp,duration]{0," + Limit + "}"
+    "?tree=jobs[name,url,builds[number,result,timestamp,duration]{0," + Limit + "}]"
     )
     
     #?tree=jobs[name,url,builds[number,result,timestamp,duration]{0,2}]
