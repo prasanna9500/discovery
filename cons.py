@@ -15,8 +15,8 @@ if type == "job":
     jenkins_url = jenkins_url
    # username = "prasanna"
    # password = "Cts++2014"
-    job_name = "Devproj"
-    Limit= "7"
+    job_name = os.getenv("Jobname")
+    Limit= os.getenv("Limit")
     #stop_date = datetime.strptime("01.02.2021 0:30", "%d.%m.%Y %H:%M")
     #start_date = datetime.strptime("01.12.2020 17:30", "%d.%m.%Y %H:%M")
 
