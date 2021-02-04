@@ -40,8 +40,6 @@ elif type == "pipeline":
         job_name = os.getenv("Jobname")
         build_number= os.getenv("Buildnumber")
         url=jenkins_url + "/job/" + job_name +"/" + build_number + "/wfapi/"
-       # username='prasanna'
-       # password='Cts++2014'
         response = requests.get(url, auth=(username, password))
         data = response.json()
         print (data['stages'])
