@@ -32,15 +32,13 @@ elif type == "view":
     view_name,
     "?tree=jobs[name,url,builds[number,result,timestamp,duration]{0," + Limit + "}]"
     )
-    
-    #?tree=jobs[name,url,builds[number,result,timestamp,duration]{0,2}]
     response = requests.get(request_url, auth=(username, password)).json()
     print(response)
 
 
 elif type == "pipeline":
-        job_name = raw_input('Enter Job name: ')
-        build_number=raw_input("Enter build number: ")
+        job_name = os.getenv("Jobname")
+        buildnumber= os.getenv("Buildnumber")
         url=jenkins_url + "/job/" + job_name +"/" + build_number + "/wfapi/"
        # username='prasanna'
        # password='Cts++2014'
