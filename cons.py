@@ -1,13 +1,15 @@
 import requests
 import jenkins
 import json
+import os
 from datetime import datetime
 
 username = "prasanna"
 password = "Cts++2014"
 jenkins_url = "http://172.31.43.33:9999"
 
-type = raw_input("Enter the Type (job/view/pipeline): ")
+type = os.getenv("type")
+#("Enter the Type (job/view/pipeline): ")
 if type == "job":
 
     jenkins_url = jenkins_url
