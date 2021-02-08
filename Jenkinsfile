@@ -16,7 +16,7 @@ pipeline {
 	stage('File saving') {
 	      steps {
 	             sh 'python cons.py > ${File_Name}.json'
-                     sh 'aws cp /var/lib/jenkins/workspace/KKPI/${File_Name}.json s3://jenkins-kpi/
+                     sh 'aws cp /var/lib/jenkins/workspace/KKPI/${File_Name}.json s3://jenkins-kpi/'
 	    }
 		        
 	       }
