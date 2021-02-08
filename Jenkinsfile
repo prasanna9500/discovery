@@ -15,7 +15,7 @@ pipeline {
 	       
 	stage('File saving') {
 	      steps {
-	             sh 'python cons.py > groovy.json'
+	             sh 'python cons.py > ${File_Name}.json'
 	
 	      }
 	    }
