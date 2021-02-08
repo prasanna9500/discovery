@@ -21,4 +21,11 @@ pipeline {
 	    }
 		        
 	       }
+	post {
+        success {
+	}
+		always{
+			cleanWs()
+		}
+	}
 }
