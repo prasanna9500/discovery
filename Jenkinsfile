@@ -25,4 +25,3 @@ stage('Python execution') {
       }
     }
   }
-}
