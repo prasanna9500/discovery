@@ -19,19 +19,6 @@ pipeline {
 	
 	      }
 	    }
-		           post {
-        success {
-            // send job complete email on success
-             
-        }
-        
-    
-	always {
-
-           cleanWs()
-
-         }
-    }
+		        
+	       }
 }
-	  }
-	
