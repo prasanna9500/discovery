@@ -1,27 +1,23 @@
 pipeline {
-   agent { label 'linux' }
-
-  
-    }
+	  agent {
+	    node {
+	      label 'linux'
+	    }
+	  }
+	       
+	       stages {
+	        stage('File execution') {
+	            steps {
+	                     sh 'python cons.py'
+	                     
+	                       }
+	    }
+	       
+	stage('File saving') {
+	      steps {
+	             sh 'python cons.py > groovy.json'
 	
-	stages {
-        stage('Echo Environment Variables') {
-            steps {
-			sh echo "Hello"
-			
-			  }
-    }
-	
-stage('Python execution') {
-      steps {
-        sh 'python cons.py'
-
-      }
-    }
-	stage('Saving output file') {
-      steps {
-        sh 'python cons.py > groovy.json'
-
-      }
-    }
-  }
+	      }
+	    }
+	  }
+	}
