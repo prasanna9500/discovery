@@ -22,8 +22,8 @@ pipeline {
 		        
 	       }
 	post {
-        success {
-	}
+        /success {
+	
 		always{
 			cleanWs()
 		}
