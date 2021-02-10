@@ -44,4 +44,4 @@ elif Type == "Pipeline":
         data = response.json()
         print (data['stages'])
         print (data['id'])
-        #print (data['status'])
+        print (data['status'])
