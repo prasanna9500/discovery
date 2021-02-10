@@ -43,5 +43,5 @@ elif Type == "Pipeline":
         response = requests.get(url, auth=(username, password))
         data = response.json()
         print (data['stages'])
-        #print (data['id'])
+        print (data['id'])
         #print (data['status'])
