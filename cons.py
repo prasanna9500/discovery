@@ -35,8 +35,11 @@ elif Type == "View":
     )
     response = requests.get(request_url, auth=(username, password)).json()
     print(response)
-    for n in response:
-         proj_list.append(response['name'])
+   job_list = response['jobs']
+   for n in job_list:
+    proj_list.append(n['name'])
+   print(proj_list)
+
           
 elif Type == "Pipeline":
     for job_name in proj_list:
