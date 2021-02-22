@@ -34,8 +34,9 @@ elif Type == "View":
     "?tree=jobs[name,url,builds[number,result,timestamp,duration]{0," + Limit + "}]"
     )
     response = requests.get(request_url, auth=(username, password)).json()
-    for n in response:
-        proj_list.append(response['name'])
+    print(response)
+#     for n in response:
+#         proj_list.append(response['name'])
 
 
 
