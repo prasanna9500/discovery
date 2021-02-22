@@ -33,12 +33,10 @@ elif Type == "View":
     "?tree=jobs[name{0," + Limit + "}]"
     )
     response = requests.get(request_url, auth=(username, password)).json()
-    print(response
+    print(response)
 #     for n in response:
 #         proj_list.append(response['name'])
-
-
-
+          
 elif Type == "Pipeline":
     for job_name in proj_list:
         j_name = os.getenv(job_name)
