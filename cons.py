@@ -42,7 +42,7 @@ elif Type == "View":
     print(proj_list)
     for job_name in proj_list:
         j_name = job_name       
-        url=jenkins_url + "/job/" + j_name +"/" + "lastBuild" + "/wfapi/"
+        url=jenkins_url + "/job/" + str(j_name) +"/" + "lastBuild" + "/wfapi/"
         print(url)
 #         response1 = requests.get(url, auth=(username, password))
 #         data1 = response1.json()
