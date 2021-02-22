@@ -25,7 +25,7 @@ if Type == "Job":
     print(response)
 
 elif Type == "View":
-    proj_list = []
+   
     jenkins_url = jenkins_url
     view_name = os.getenv("Jobname")
     Limit= os.getenv("Limit")
