@@ -35,7 +35,7 @@ elif Type == "View":
     )
     response = requests.get(request_url, auth=(username, password)).json()
     for n in response:
-        proj_list.append(response['name'])
+        proj_list.append(response["u'name"])
 
 
 
