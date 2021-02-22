@@ -24,17 +24,16 @@ if Type == "Job":
     print(response)
 
 elif Type == "View":
-    proj_list = []
     jenkins_url = jenkins_url
     view_name = os.getenv("Jobname")
     Limit= os.getenv("Limit")
     request_url = "{0:s}/view/{1:s}/api/json{2:s}".format(
     jenkins_url,
     view_name,
-    "?tree=jobs[[name]{0," + Limit + "}]"
+    "?tree=jobs[name{0," + Limit + "}]"
     )
     response = requests.get(request_url, auth=(username, password)).json()
-    print(response)
+    print(response
 #     for n in response:
 #         proj_list.append(response['name'])
 
