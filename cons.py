@@ -40,7 +40,12 @@ elif Type == "View":
     for n in job_list:
        proj_list.append(n['name'])
     print(proj_list)
-    
+    for job_name in proj_list:
+    j_name = os.getenv(job_name)
+    url=jenkins_url + "/job/" + j_name +"/" + "lastBuild" + "/wfapi/"
+    response = requests.get(url, auth=(username, password))
+    data = response.json()
+    print (data['stages'])
 
 
           
