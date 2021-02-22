@@ -45,7 +45,8 @@ elif Type == "View":
     url=jenkins_url + "/job/" + str(j_name) +"/" + "lastBuild" + "/wfapi/"
     response1 = requests.get(url, auth=(username, password))
     data = response1.json()
-    print (data['stages'])
+    print(response1)
+#     print (data['stages'])
 
 
           
