@@ -40,11 +40,13 @@ elif Type == "View":
 
 
 elif Type == "Pipeline":
-        job_name = os.getenv("Jobname")
+    for job_name in proj_list:
+        j_name = os.getenv(job_name)
         build_number= os.getenv("Buildnumber")
-        url=jenkins_url + "/job/" + job_name +"/" + build_number + "/wfapi/"
+        url=jenkins_url + "/job/" + j_name +"/" + build_number + "/wfapi/"
         response = requests.get(url, auth=(username, password))
         data = response.json()
         print (data['stages'])
         #print (data['id'])
-       # print (data['status'])
+        #print (data['status'])
+
