@@ -41,21 +41,11 @@ elif Type == "View":
        proj_list.append(n['name'])
     print(proj_list)
     for job_name in proj_list:
-        j_name = os.getenv(job_name)
-    request_url = "{0:s}/job/{1:s}/api/json{2:s}".format(
-    jenkins_url,
-    j_name,
-    "lastBuild/wfapi/"
-    )
-
-    response1 = requests.get(request_url, auth=(username, password)).json()
-    print(response1)
-    
-        
-#     url=jenkins_url + "/job/" + str(j_name) +"/" + "lastBuild" + "/wfapi/"
-#     response1 = requests.get(url, auth=(username, password))
-#     data = response1.json()
-#     print (data['stages'])
+        j_name = os.getenv(job_name)        
+      url=jenkins_url + "/job/" + str(j_name) +"/" + "lastBuild" + "/wfapi/"
+      response1 = requests.get(url, auth=(username, password))
+      data1 = response1.json()
+      print (data1['stages'])
 
 
           
