@@ -50,7 +50,7 @@ elif Type == "View":
 
 
           
-elif Type == "Pipeline":
+elif Type == "Pipeline Job":
         job_name = os.getenv("Jobname")
         build_number= os.getenv("Buildnumber")
         url=jenkins_url + "/job/" + job_name +"/" + build_number + "/wfapi/"
