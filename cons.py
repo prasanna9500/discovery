@@ -24,7 +24,7 @@ if Type == "Job":
     response = requests.get(request_url, auth=(username, password)).json()
     print(response)
 
-elif Type == "View":
+elif Type == "View Pipeline Jobs":
    
     jenkins_url = jenkins_url
     view_name = os.getenv("Jobname")
