@@ -25,7 +25,7 @@ if Type == "Job":
     print(response)
 
 elif Type == "View Pipeline Jobs":
-   
+  
     jenkins_url = jenkins_url
     view_name = os.getenv("Jobname")
     Limit= os.getenv("Limit")
@@ -37,11 +37,15 @@ elif Type == "View Pipeline Jobs":
     response = requests.get(request_url, auth=(username, password)).json()
     print(response)
     job_list = response['jobs']
+    job_list1 = []
     for n in job_list:
-       proj_list.append(n['name'])
+        if n['_class'] not in 'hudson.model.FreeStyleProject':
+            job_list1.append(n)
+    for i in job_list1:
+        proj_list.append(i['name'])
     print(proj_list)
     for job_name in proj_list:
-        j_name = job_name       
+        j_name = job_name      
         url=jenkins_url + "/job/" + str(j_name) +"/" + "lastBuild" + "/wfapi/"
         #print(url)
         response1 = requests.get(url, auth=(username, password))
