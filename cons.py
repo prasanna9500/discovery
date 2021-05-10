@@ -1,4 +1,4 @@
-import requests 
+import requests
 import jenkins
 import json
 import os
