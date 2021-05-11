@@ -9,8 +9,8 @@ password = "Cts++2014"
 jenkins_url = "http://172.31.43.33:9999"
 proj_list = []
 
-#Type = os.getenv("Type")
-#if Type == "Job":
+Type = os.getenv("Type")
+if Type == "Job":
 
     jenkins_url = jenkins_url
     job_name = os.getenv("Devproj")
