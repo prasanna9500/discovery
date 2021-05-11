@@ -9,11 +9,11 @@ password = "Cts++2014"
 jenkins_url = "http://172.31.43.33:9999"
 proj_list = []
 
-Type = os.getenv("Type")
-if Type == "Job":
+#Type = os.getenv("Type")
+#if Type == "Job":
 
     jenkins_url = jenkins_url
-    job_name = os.getenv("Jobname")
+    job_name = os.getenv("Devproj")
     Limit= os.getenv("Limit")
     request_url = "{0:s}/job/{1:s}/api/json{2:s}".format(
     jenkins_url,
@@ -24,7 +24,7 @@ if Type == "Job":
     response = requests.get(request_url, auth=(username, password)).json()
     print(response)
 
-elif Type == "View Pipeline Jobs":
+"""elif Type == "View Pipeline Jobs":
   
     jenkins_url = jenkins_url
     view_name = os.getenv("Jobname")
@@ -60,8 +60,8 @@ elif Type == "Pipeline Job":
         url=jenkins_url + "/job/" + job_name +"/" + build_number + "/wfapi/"
         response = requests.get(url, auth=(username, password))
         data = response.json()
-        print (data['stages'])
+        print (data['stages'])"""
         #print (data['id'])
-       # print (data['status'])
+       # print (data['status'])##
 
 
